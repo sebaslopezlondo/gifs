@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { GifItemComponent } from '../gif-item/gif-item.component';
-import { IMAGE_URLS } from '../../constants/imageUrls.contants';
+import { IGif } from '../../interfaces/giphy.interface';
 
 @Component({
   selector: 'app-gif-list',
@@ -9,5 +9,5 @@ import { IMAGE_URLS } from '../../constants/imageUrls.contants';
   styleUrl: './gif-list.component.css',
 })
 export class GifListComponent {
-  public imageUrls = IMAGE_URLS;
+  @Input() gifsList: IGif[] = [];
 }
