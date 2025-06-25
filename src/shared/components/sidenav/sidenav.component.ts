@@ -17,4 +17,22 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   templateUrl: './sidenav.component.html',
   styleUrl: './sidenav.component.css',
 })
-export class SidenavComponent {}
+export class SidenavComponent {
+  public userAccess = [
+    {
+      name: 'Inicio',
+      icon: 'home',
+      route: '/dashboard',
+    },
+    {
+      name: 'Gifs Search',
+      icon: 'search',
+      route: '/search',
+    },
+    {
+      name: 'Gifs Trending',
+      icon: 'gifs',
+      route: '/trending',
+    },
+  ];
+}

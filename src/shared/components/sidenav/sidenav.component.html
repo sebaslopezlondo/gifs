@@ -1,40 +1,22 @@
 <mat-drawer-container class="h-screen">
-  <mat-drawer mode="side" opened class="w-60 bg-gray-800 text-white w-50">
+  <mat-drawer mode="side" opened>
     <div class="flex flex-col h-full">
-      <mat-toolbar class="bg-gray-900 text-lg font-semibold justify-center">
+      <mat-toolbar class="bg-gray-900 text-lg font-medium justify-center">
         Menú
       </mat-toolbar>
 
       <mat-nav-list class="flex-1">
-        <a
+        @for (access of userAccess; track $index) {
+        <div
           mat-list-item
-          routerLink="/"
-          routerLinkActive="bg-gray-700"
-          class="hover:bg-gray-700 px-4 py-2 rounded flex items-center gap-3"
+          [routerLink]="access?.route"
+          routerLinkActive="bg-slate-400"
+          class="hover:bg-slate-300 px-4 py-2 rounded flex items-center gap-3 cursor-pointer"
         >
-          <mat-icon class="text-blue-300">home</mat-icon>
-          <span>Inicio</span>
-        </a>
-
-        <a
-          mat-list-item
-          routerLink="/dashboard"
-          routerLinkActive="bg-gray-700"
-          class="hover:bg-gray-700 px-4 py-2 rounded flex items-center gap-3"
-        >
-          <mat-icon class="text-blue-300">dashboard</mat-icon>
-          <span>Dashboard</span>
-        </a>
-
-        <a
-          mat-list-item
-          routerLink="/gifs"
-          routerLinkActive="bg-gray-700"
-          class="hover:bg-gray-700 px-4 py-2 rounded flex items-center gap-3"
-        >
-          <mat-icon class="text-blue-300">gifs</mat-icon>
-          <span>Gifs</span>
-        </a>
+          <mat-icon class="text-blue-300">{{ access?.icon }}</mat-icon>
+          <span>{{ access?.name }}</span>
+        </div>
+        }
       </mat-nav-list>
     </div>
   </mat-drawer>
