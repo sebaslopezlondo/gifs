@@ -1,0 +1,8 @@
+<section class="py-5">
+  @if (gifsByKey().length > 0) {
+  <h2 class="text-2xl font-bold mt-5">Resultados</h2>
+  <app-gif-list [gifsList]="gifsByKey()"></app-gif-list>
+  } @else {
+  <h2 class="text-2xl font-bold mt-5">No se encontraron resultados</h2>
+  }
+</section>

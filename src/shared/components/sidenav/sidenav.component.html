@@ -18,6 +18,19 @@
         </div>
         }
       </mat-nav-list>
+      <mat-nav-list>
+        @for (key of gifService.searchHistoryKeys(); track $index) {
+        <div
+          mat-list-item
+          [routerLink]="['history', key]"
+          routerLinkActive="bg-slate-400"
+          class="hover:bg-slate-300 px-4 py-2 rounded flex items-center gap-3 cursor-pointer"
+        >
+          <mat-icon class="text-blue-300">gif</mat-icon>
+          <span>{{ key }}</span>
+        </div>
+        }
+      </mat-nav-list>
     </div>
   </mat-drawer>
 

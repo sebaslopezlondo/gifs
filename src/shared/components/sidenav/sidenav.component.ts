@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -18,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   styleUrl: './sidenav.component.css',
 })
 export class SidenavComponent {
+  gifService = inject(GifsService);
   public userAccess = [
     {
       name: 'Inicio',

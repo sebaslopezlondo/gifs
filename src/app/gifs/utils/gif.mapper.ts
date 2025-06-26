@@ -14,7 +14,6 @@ export class GifMapper {
   }
 
   static mapGiphyItemsToGifArray(items: IDataGifResponse[]): IGif[] {
-    console.log(items);
     return items.map((item) => this.mapGiphyItemToGif(item));
   }
 }
